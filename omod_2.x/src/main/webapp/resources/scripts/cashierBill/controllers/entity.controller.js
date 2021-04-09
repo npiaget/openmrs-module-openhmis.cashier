@@ -91,6 +91,7 @@
 				$scope.roundingItem = '';
 				$scope.paymentModeAttributesData = [];
 				$scope.dateCreated = '';
+				$scope.ALLOW_BILL_PAYMENT = true;
 
 				//load rounding item if any..
 				CashierBillRestfulService.getRoundingItem(function(roundingItem) {
@@ -233,7 +234,9 @@
 		self.checkInitSettingsAndPrivileges = self.checkInitSettingsAndPrivileges || function() {
 				// check if user has privileges to adjust a bill.
 				if (self.getUuid() !== undefined) {
-					self.checkPrivileges(PRIVILEGE_ADJUST_BILL, self.onHasPrivilegesCallback);
+					self.checkPrivileges(PRIVILEGE_ADJUST_BILL, self.onHasPrivilegesAdjustCallback);
+
+					self.checkPrivileges(PRIVILEGE_MAKE_PAYMENT, self.onHasPrivilegesPaymentCallback);
 
 					//check if the "allow bill adjustment" setting is set.
 					CashierBillRestfulService.checkAllowBillAdjustment(function(data) {
@@ -567,11 +570,17 @@
 				}
 			}
 
-		self.onHasPrivilegesCallback = self.onHasPrivilegesCallback || function(hasPrivileges){
+		self.onHasPrivilegesAdjustCallback = self.onHasPrivilegesAdjustCallback || function(hasPrivileges){
 				if(!hasPrivileges){
 					$scope.ALLOW_BILL_ADJUSTMENT = false;
 				}
 			}
+
+		self.onHasPrivilegesPaymentCallback = self.onHasPrivilegesPaymentCallback || function(hasPrivileges){
+			if(!hasPrivileges){
+				$scope.ALLOW_BILL_PAYMENT = false;
+			}
+		}
 
 		/* ENTRY POINT: Instantiate the base controller which loads the page */
 		$injector.invoke(base.GenericEntityController, self, {

@@ -10,3 +10,4 @@ var PRIVILEGE_CREATE_BILL = 'Task: Create new bill';
 var PRIVILEGE_ADJUST_BILL = 'Task: Adjust Cashier Bills';
 var PRIVILEGE_CASHIER_TIMESHEETS = "Task: Cashier Timesheets";
 var TASK_MANAGE_METADATA = "Task: Manage Cashier Metadata";
+var PRIVILEGE_MAKE_PAYMENT = "Task: Make payment for bill";
