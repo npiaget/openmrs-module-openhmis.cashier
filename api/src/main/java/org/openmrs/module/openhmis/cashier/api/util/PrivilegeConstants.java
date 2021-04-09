@@ -51,6 +51,7 @@ public class PrivilegeConstants {
 	public static final String APP_ACCESS_CASHIER_TASKS_PAGE = "App: Access Cashier Tasks";
 	public static final String TASK_CREATE_NEW_BILL_PAGE = "Task: Create new bill";
 	public static final String TASK_ADJUST_CASHIER_BILL = "Task: Adjust Cashier Bills";
+	public static final String TASK_MAKE_PAYMENT_ON_BILL = "Task: Make payment for bill";
 	public static final String TASK_CASHIER_TIMESHEETS_PAGE = "Task: Cashier Timesheets";
 	public static final String TASK_MANAGE_CASHIER_MODULE_PAGE = "Task: Manage Cashier Module";
 
@@ -60,6 +61,7 @@ public class PrivilegeConstants {
 	public static final String[] PRIVILEGE_NAMES = new String[] { MANAGE_BILLS, ADJUST_BILLS, VIEW_BILLS, PURGE_BILLS,
 	        REFUND_MONEY, REPRINT_RECEIPT, MANAGE_TIMESHEETS, VIEW_TIMESHEETS, PURGE_TIMESHEETS, MANAGE_METADATA,
 	        VIEW_METADATA, PURGE_METADATA, APP_VIEW_CASHIER_APP, TASK_CREATE_NEW_BILL_PAGE, TASK_ADJUST_CASHIER_BILL,
+	        TASK_MAKE_PAYMENT_ON_BILL,
 	        TASK_CASHIER_TIMESHEETS_PAGE, TASK_MANAGE_CASHIER_MODULE_PAGE, TASK_MANAGE_CASHIER_METADATA,
 	        TASK_CASHIER_TIMESHEETS_PAGE, TASK_MANAGE_CASHIER_MODULE_PAGE, TASK_VIEW_CASHIER_REPORTS,
 	        APP_ACCESS_CASHIER_TASKS_PAGE };

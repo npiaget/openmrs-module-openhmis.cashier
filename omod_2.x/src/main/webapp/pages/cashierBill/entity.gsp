@@ -15,7 +15,7 @@
 			label: "${ ui.message("openhmis.cashier.bill")}"
 		}
 	];
-	
+
 	jQuery('#breadcrumbs').html(emr.generateBreadcrumbHtml(breadcrumbs));
 	jQuery(".tabs").tabs();
 </script>
@@ -299,7 +299,7 @@
             </table>
         </fieldset>
 
-        <fieldset class="paymentMode" ng-show="STATUS !== 'PAID' && STATUS !== 'ADJUSTED' || (totalChangeDue < 0 && STATUS !== 'PENDING')">
+        <fieldset class="paymentMode" ng-show="ALLOW_BILL_PAYMENT === true && (STATUS !== 'PAID' && STATUS !== 'ADJUSTED' || (totalChangeDue < 0 && STATUS !== 'PENDING'))">
             <legend>${ ui.message("openhmis.cashier.paymentPlural")}</legend>
             <ul class="table-layout">
                 <li class="not-required">${ui.message('openhmis.cashier.bill.selectMode')}</li>
@@ -358,19 +358,19 @@
                 </div>
             </div>
         </div>
-		
+
 		<div id="adjust-bill-warning-dialog" class="dialog hide-dialog">
 			<div class="dialog-header">
 				<span>
 					<i class="icon-warning-sign"></i>
-					
+
 					<h3>
 						${ui.message('openhmis.cashier.bill.adjustBill')}
 					</h3>
 				</span>
 				<i class="icon-remove cancel show-cursor align-right" ng-click="closeThisDialog()"></i>
 			</div>
-			
+
 			<div class="dialog-content form">
 				<span><b>${ui.message('openhmis.cashier.adjustedReasonPrompt')}</b></span>
 				<br/><br/><br/>
@@ -381,7 +381,7 @@
 					<input type="text" ng-model="adjustmentReason" required/>
 					<br/><br/>
 				</span>
-				
+
 				<div class="ngdialog-buttons detail-section-border-top">
 					<br/>
 					<input type="button" class="cancel" value="${ui.message('general.cancel')}"

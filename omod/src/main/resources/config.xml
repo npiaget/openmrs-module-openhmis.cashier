@@ -240,6 +240,11 @@
 	</privilege>
 
 	<privilege>
+		<name>Task: Make payment for bill</name>
+		<description>Able to make a payment for a bill</description>
+	</privilege>
+
+	<privilege>
 		<name>Task: Cashier Timesheets</name>
 		<description>Able to access timesheets page</description>
 	</privilege>
